@@ -55,7 +55,7 @@ let navChildCount = nav[0].childElementCount;
 
 
 
-let booksLink = documnet.createElement('a';
+let booksLink = documnet.createElement('a');
 booksLink.innerHTML = "Books";
 booksLink.href = 'Books.html';
 
@@ -66,4 +66,17 @@ moviesLink.href = 'Movies.html';
 for (let i = 1; i <= navChildCount; i++) {
   nav[0].children[i-1].innerHTML = siteContent['nav']['nav-item-'+i];
   nav[0].children[i-1].href = siteContent['nav']['nav-item-'+i] + 'html';
+}
+
+
+
+
+
+nav[0].appendChild(booksLink);
+nav[0].prepend(moviesLink);
+
+let colorNav = document.querySelector('nav');
+
+for(let j = 1; j <= colorNav.childElementCount; j++) {
+  nav[0].chlidren[j-1].style.color = 'grey';
 }
