@@ -11,10 +11,14 @@ const siteContent = {
   "cta": {
     "h1": "DOM Is Awesome",
     "button": "Get Started",
+  
     "img-src": "img/header-img.png"
   },
+
+  
   "main-content": {
     "features-h4":"Features",
+    "features-h4": "Features",
     "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
     "about-h4":"About",
     "about-content": "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
@@ -34,9 +38,32 @@ const siteContent = {
   },
   "footer": {
     "copyright" : "Copyright Great Idea! 2018"
+  
   },
 };
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+let nav = document.querySelectorAll('nav');
+console.log(nav.children);
+let navChildCount = nav[0].childElementCount;
+
+
+
+
+
+let booksLink = documnet.createElement('a';
+booksLink.innerHTML = "Books";
+booksLink.href = 'Books.html';
+
+let moviesLink = document.createElement('a');
+moviesLink.innerHTML = 'Movies';
+moviesLink.href = 'Movies.html';
+
+for (let i = 1; i <= navChildCount; i++) {
+  nav[0].children[i-1].innerHTML = siteContent['nav']['nav-item-'+i];
+  nav[0].children[i-1].href = siteContent['nav']['nav-item-'+i] + 'html';
+}
